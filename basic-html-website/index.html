@@ -16,13 +16,13 @@
 
 <body>
     <header>
-        <nav>
+        <nav id="navigation-bar">
             <div> 
                 <img src="media/logo.png" alt="logo">
                 Name Surname
             </div>
 
-            <ul>
+            <ul class="pages">
                 <li> Home </li>
                 <li> Projects </li>
                 <li> Articles </li>
@@ -37,71 +37,80 @@
             <footer id="top-section-footer"> Simple HTML Website + some CSS </footer>
         </section>
         
-        <div class="main-content">
-        <section> 
-            <h2> Projects </h2>
-            <ul>
-                <li> HTML Only Portfolio </li>
-                <li> Calculator </li>
-                <li> Quiz App </li>
-                <li> Coundown Timer </li>
-                <li> Product Upcoming Page </li>
-            </ul>
-        </section>
-
-        <section>
-            <h2> Work Experience </h2>
-
-            <div>
-                <h3>Google</h3>
-                <p> Developed Search Engine and Google Chrome Web Browser </p>
-            </div>
-            <div>
-                <h3>Facebook</h3>
-                <p> Developed Facebook.com and Instagram.com </p>
-            </div>
-
-            <a href="https://github.com/"> Visit my Profile </a>
-        </section>
-
-        <section>
-            <h2> Education </h2>
-
-            <div>
-                <h3>City Univercity</h3>
-                <p> Graduated with 3.5 GPA </p>
-            </div>
-            
-            <div>
-                <h3>Courses I took:</h3>
-                <ul>
-                    <li> Algebra </li>
-                    <li> Computer Science </li>
-                    <li> Web Development </li>
+        <div id="main-container">
+            <section class="main-element">
+                <h2> Projects </h2>
+                <ul class="projects-list">
+                    <li> HTML Only Portfolio </li>
+                    <li> Calculator </li>
+                    <li> Quiz App </li>
+                    <li> Coundown Timer </li>
+                    <li> Product Upcoming Page </li>
                 </ul>
-            </div>
+            </section>
 
-        </section>
+            <section class="main-element">
+                <h2> Work Experience </h2>
+
+                <div>
+                    <h3>Google</h3>
+                    <p> Developed Search Engine and Google Chrome Web Browser </p>
+                </div>
+                <div>
+                    <h3>Facebook</h3>
+                    <p> Developed Facebook.com and Instagram.com </p>
+                </div>
+
+                <a href="https://github.com/"> Visit my Profile </a>
+            </section>
+
+            <section class="main-element">
+                <h2> Education </h2>
+
+                <div>
+                    <h3>City Univercity</h3>
+                    <p> Graduated with 3.5 GPA </p>
+                </div>
+                
+                <div>
+                    <h3>Courses I took:</h3>
+                    <ul>
+                        <li> Algebra </li>
+                        <li> Computer Science </li>
+                        <li> Web Development </li>
+                    </ul>
+                </div>
+
+            </section>
         </div>
 
         <section id="reviews">
             <h2>Reviews From my Teachers</h2>
 
-            <div>
-                <p> Mr. Surname inspires students with engaging lessons and a genuine passion for learning every day </p>
-                <footer> Professor: John Smith </footer>
-            </div>
+            <div class="review-container">
+                <div class="review-element">
+                    <p> Mr. Surname inspires students with engaging
+                        lessons and a genuine passion for learning 
+                        every day </p>
+                    <footer> Professor: John Smith </footer>
+                </div>
 
-            <div>
-                <p> Ms. Surname creates a supportive classroom environment, encouraging creativity and critical thinking among her students </p>
-                <footer> Professor: Thomas Edison </footer>
-            </div>
+                <div class="review-element">
+                    <p> Ms. Surname creates a supportive 
+                        classroom environment, encouraging creativity 
+                        and critical thinking among her students </p>
+                    <footer> Professor: Thomas Edison </footer>
+                </div>
 
-            <div>
-                <p> Mrs. Surname is dedicated and approachable, always willing to help students achieve their academic goalsMrs. Lee is dedicated and approachable, always willing to help students achieve their academic goals </p>
-                <footer> Professor: Sarah Lee </footer>
+                <div class="review-element">
+                    <p> Mrs. Surname is dedicated and approachable, 
+                        always willing to help students achieve their 
+                        academic goalsMrs. Lee is dedicated and approachable,
+                        always willing to help students achieve their academic
+                        goals </p>
+                    <footer> Professor: Sarah Lee </footer>
+                </div>
             </div>
-
         </section>
 
     </main>
