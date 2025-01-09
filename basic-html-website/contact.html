@@ -6,6 +6,7 @@
     <title>Articles</title>
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="form-styles.css">
 
 </head>
 <body>
@@ -25,38 +26,70 @@
         </nav>
     </header>
     <main>
-        <section id="articles">
-            <h2 id="articles-title">Contacts</h2>
+        <div id="form-container">
+            <form id="feedback-form">
+                <label for="customer-name">Name</label>
+                <input id="customer-name" type="text" placeholder="Name" required>
+                <br>
+                <label for="customer-surname">Surname</label>
+                <input id="customer-surname" type="text" placeholder="Surname">
+                <br>
+                <label for="customer-email">E-mail</label>
+                <input id="customer-email" type="email" placeholder="example@mail.com">
+                <br>
+    
+                <label for="customer-feedback"> Feedback</label>
+                <textarea id="customer-feedback" rows="7" cols="30"></textarea>
+                
+                <br>
+                <br>
 
-            <div class="article-container">
-                <div class="article-element">
-                    <p> Mr. Surname inspires students with engaging
-                        lessons and a genuine passion for learning 
-                        every day </p>
-                    <footer> Professor: John Smith </footer>
-                </div>
-
-                <div class="article-element">
-                    <p> Ms. Surname creates a supportive 
-                        classroom environment, encouraging creativity 
-                        and critical thinking among her students </p>
-                    <footer> Professor: Thomas Edison </footer>
-                </div>
-
-                <div class="article-element">
-                    <p> Mrs. Surname is dedicated and approachable, 
-                        always willing to help students achieve their 
-                        academic goalsMrs.
-                        goals </p>
-                    <footer> Professor: Sarah Lee </footer>
-                </div>
-            </div>
-        </section>
-
+                <label>Did you like our service?</label>
+                <label for="yes">
+                    <input id="yes" type="radio" name="customer-satisfaction">
+                    Yes
+                </label>
+                
+                <label for="no">
+                    <input id="no" type="radio" name="customer-satisfaction">
+                    No
+                </label>
+                
+                <br>
+                <label for="country-of-origin"> Country </label>
+                <select id="country-of-origin">
+                    <option value="UK">United Kingdom</option>
+                    <option value="USA">United States</option>
+                    <option value="Japan">Japan</option>
+                </select>
+        
+                <br>
+                <label>How would you like to be contacted?</label>
+                
+                <label for="phone-contact">
+                    <input name="prefered-contact" type="checkbox"  id="phone-contact">
+                    Phone
+                </label>
+                
+                <label for="email-contact">
+                    <input name="prefered-contact" type="checkbox"  id="email-contact">
+                    Email
+                </label>
+                
+                <label for="whatsapp-contact">
+                    <input name="prefered-contact" type="checkbox"  id="whatsapp-contact">
+                    WhatsApp
+                </label>
+                
+                <button type="submit"> Submit</button>
+            </form>
+        </div>
     </main>
 
     <footer id="footer">
         <p id="footer-paragraph"> &copy; all rights reserved 2024 </p>
     </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
