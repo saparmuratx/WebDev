@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
+        }
+
+        #ageCalculator {
+            background: #ffffff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        #ageCalculator h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333333;
+        }
+
+        input[type="date"] {
+            padding: 8px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4caf50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+   
+    <div id="ageCalculator">
+   
+        <h1>Age Calculator</h1>
+
+        <input type="date" id="birthDate">
+        <button id="calculateAge">Calculate</button>
+
+        <div id="result"></div>
+   
+    </div>
+  
+    <script>
+        let calculateAgeButton = document.getElementById("calculateAge");
+        let resultElement = document.getElementById("result");
+        
+        calculateAgeButton.addEventListener("click", function () {
+            let birthDateElement = document.getElementById("birthDate").value;
+
+            
+            console.log(birthDateElement);
+
+            if (!birthDateElement) {
+                resultElement.textContent = "Invalid value. Try again.";
+                resultElement.style.color = "red";
+                return;
+            }
+
+            let birthDate = new Date(birthDateElement);
+
+            console.log(birthDate);
+
+            let today = new Date();
+
+            console.log(today);
+            
+            difference = today - birthDate; 
+
+            console.log(difference)
+
+            differenceInDays = Math.floor(difference / (1000 * 3600 * 24));
+
+            // birthYear = birthDate.getFullYear();
+            // thisYear = today.getFullYear();
+
+            ageInYears = Math.floor(differenceInDays / 365);
+
+            remainder = differenceInDays % 365;
+
+            resultElement.textContent = `Your age is: ${ageInYears} years and ${remainder} days old APPROXIMATELY.`;
+            resultElement.style.color = "green";
+        });
+
+    </script>
+
+</body>
+</html>
