@@ -97,9 +97,79 @@
             <input type="text" id="todo-input" placeholder="Add a new task">
             <button id="add-todo">Add</button>
         </div>
-        <ul id="todo-list" class="todo-list"></ul>
+        <ul id="todo-list" class="todo-list">
+        </ul>
     </div>
 
+    <script>
+        const todoCollection = {};
+        
+        const addTodoButton = document.getElementById("add-todo");
+
+        const todoList = document.getElementById("todo-list");
+
+        const todoInput = document.getElementById("todo-input");
+        
+        function proccessInput() {
+            const id = Date.now();
+
+            let todoText = todoInput.value.trim();
+
+            if (todoText === "") {
+                alert("Todo can't be empty!");
+                return
+            }
+            
+            todoCollection[id] = todoText;
+
+            displayTodos();
+        }
+
+        function deleteTodo(key) {
+            delete todoCollection[key];
+            
+            displayTodos();
+        }
+
+        function displayTodos() {
+            todoList.textContent = "";
+            console.log(todoCollection);
+            for (const [key, todoText] of Object.entries(todoCollection)) {
+    
+                todoItem = document.createElement("li");
+                todoItem.className = "todo-item";
+
+                todoSpan = document.createElement("span");
+                todoSpan.textContent = todoText;
+
+                deleteButton = document.createElement("button");
+                deleteButton.textContent = "Delete"
+                deleteButton.onclick = () => deleteTodo(key);
+
+                todoItem.appendChild(todoSpan);
+                todoItem.appendChild(deleteButton);
+
+                todoList.appendChild(todoItem);
+            }
+        }
+        
+        addTodoButton.addEventListener("click", proccessInput);
+
+        function enterPress(keyPressEvent) {
+            if (keyPressEvent.key === "Enter") {
+                proccessInput();
+            }
+        }
+
+        todoInput.addEventListener("keypress", enterPress(e));
+
+
+        todoInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                addTodo();
+            }
+        });
+    </script>
 </body>
 
 </html>
